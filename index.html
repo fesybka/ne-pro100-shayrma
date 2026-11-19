@@ -17,18 +17,19 @@
     color: #fff;
     text-align: center;
     padding: 40px 20px 50px;
-    position: relative;
+  }
+  header .logo {
+    width: 110px; height: 110px;
+    margin: 0 auto 14px;
+    display: block;
+    filter: drop-shadow(0 6px 12px rgba(0,0,0,.25));
   }
   header h1 {
     font-size: 2.6rem;
     letter-spacing: 1px;
     text-shadow: 2px 2px 0 rgba(0,0,0,.2);
   }
-  header p.slogan {
-    font-size: 1.2rem;
-    margin-top: 10px;
-    opacity: .95;
-  }
+  header p.slogan { font-size: 1.2rem; margin-top: 10px; opacity: .95; }
   .btn-call {
     display: inline-block;
     margin-top: 22px;
@@ -72,7 +73,9 @@
     border-radius: 14px;
     padding: 22px;
     box-shadow: 0 4px 14px rgba(0,0,0,.08);
+    text-align: center;
   }
+  .info-card .icon { width: 48px; height: 48px; margin-bottom: 10px; }
   .info-card h3 { color: #f77f00; margin-bottom: 8px; font-size: 1.05rem; }
   .info-card p { font-size: .97rem; }
   .menu-grid {
@@ -83,27 +86,18 @@
   .menu-item {
     background: #fff;
     border-radius: 14px;
-    padding: 18px 20px;
+    padding: 16px;
     box-shadow: 0 4px 14px rgba(0,0,0,.08);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-left: 5px solid #f77f00;
+    text-align: center;
+    border-bottom: 5px solid #f77f00;
+    transition: transform .2s;
   }
-  .menu-item .name { font-weight: 600; }
-  .menu-item .price { color: #d62828; font-weight: bold; white-space: nowrap; margin-left: 12px; }
-  .note {
-    font-size: .88rem;
-    color: #777;
-    margin-top: 16px;
-    font-style: italic;
-  }
-  .contacts-flex {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
-    align-items: stretch;
-  }
+  .menu-item:hover { transform: translateY(-4px); }
+  .menu-item img { width: 100%; height: 120px; object-fit: contain; margin-bottom: 10px; }
+  .menu-item .name { font-weight: 600; display: block; }
+  .menu-item .price { color: #d62828; font-weight: bold; display: block; margin-top: 6px; }
+  .note { font-size: .88rem; color: #777; margin-top: 16px; font-style: italic; }
+  .contacts-flex { display: flex; flex-wrap: wrap; gap: 24px; align-items: stretch; }
   .contacts-col { flex: 1 1 300px; }
   .contacts-col a.phone {
     display: block;
@@ -114,6 +108,7 @@
     margin-bottom: 8px;
   }
   .contacts-col a.phone:hover { text-decoration: underline; }
+  .contacts-col .label { font-size: .85rem; color: #777; }
   .route-btn {
     display: inline-block;
     margin-top: 14px;
@@ -151,10 +146,20 @@
 <body>
 
 <header>
+  <!-- Логотип: стилизованная шаурма -->
+  <svg class="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="50" cy="52" rx="42" ry="40" fill="#f4d19b"/>
+    <path d="M14 50 Q50 10 86 50 Q50 90 14 50 Z" fill="#e8b563"/>
+    <path d="M20 52 Q50 30 80 52" stroke="#c0392b" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <path d="M24 60 Q50 42 76 60" stroke="#27ae60" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M28 68 Q50 54 72 68" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <circle cx="40" cy="44" r="4" fill="#c0392b"/>
+    <circle cx="60" cy="44" r="4" fill="#c0392b"/>
+  </svg>
   <h1>Шаур-Donald`s</h1>
   <p class="slogan">Вкусно. Быстро. Круглосуточно.</p>
   <span class="badge-247">Работаем 24/7</span><br>
-  <a href="tel:+73012357546" class="btn-call">📞 Позвонить</a>
+  <a href="tel:+79146364414" class="btn-call">📞 Позвонить</a>
 </header>
 
 <main>
@@ -163,14 +168,17 @@
     <h2>О нас</h2>
     <div class="info-grid">
       <div class="info-card">
+        <svg class="icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="#ffe8d0"/><path d="M24 10c-6 0-10 4-10 10 0 7 10 18 10 18s10-11 10-18c0-6-4-10-10-10zm0 14a4 4 0 110-8 4 4 0 010 8z" fill="#d62828"/></svg>
         <h3>📍 Адрес</h3>
         <p>г. Улан-Удэ, ул. Гагарина, 24В/1<br>Железнодорожный район</p>
       </div>
       <div class="info-card">
+        <svg class="icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="#e0f2ef"/><circle cx="24" cy="24" r="12" fill="none" stroke="#2a9d8f" stroke-width="3"/><path d="M24 16v9l6 4" stroke="#2a9d8f" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
         <h3>🕒 Режим работы</h3>
         <p>Круглосуточно, без выходных<br>Готовим в любое время дня и ночи</p>
       </div>
       <div class="info-card">
+        <svg class="icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="#fff3cd"/><rect x="12" y="18" width="24" height="16" rx="3" fill="none" stroke="#f77f00" stroke-width="3"/><path d="M12 24h24" stroke="#f77f00" stroke-width="3"/></svg>
         <h3>💳 Оплата</h3>
         <p>Наличные, банковские карты, QR-код. Есть еда навынос и доставка.</p>
       </div>
@@ -180,25 +188,111 @@
   <section id="menu">
     <h2>Меню</h2>
     <div class="menu-grid">
-      <div class="menu-item"><span class="name">Шаурма</span><span class="price">от 120 ₽</span></div>
-      <div class="menu-item"><span class="name">Бургеры</span><span class="price">от 120 ₽</span></div>
-      <div class="menu-item"><span class="name">Хот-доги</span><span class="price">от 120 ₽</span></div>
-      <div class="menu-item"><span class="name">Чебуреки / беляши</span><span class="price">от 120 ₽</span></div>
-      <div class="menu-item"><span class="name">Пицца</span><span class="price">от 200 ₽</span></div>
-      <div class="menu-item"><span class="name">Картофель фри</span><span class="price">от 120 ₽</span></div>
-      <div class="menu-item"><span class="name">Куры-гриль</span><span class="price">от 200 ₽</span></div>
-      <div class="menu-item"><span class="name">Блины</span><span class="price">от 120 ₽</span></div>
+
+      <div class="menu-item">
+        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="60" cy="62" rx="46" ry="42" fill="#f4d19b"/>
+          <path d="M16 60 Q60 16 104 60 Q60 104 16 60 Z" fill="#e8b563"/>
+          <path d="M24 62 Q60 36 96 62" stroke="#c0392b" stroke-width="9" fill="none" stroke-linecap="round"/>
+          <path d="M30 72 Q60 50 90 72" stroke="#27ae60" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <path d="M36 82 Q60 64 84 82" stroke="#fff" stroke-width="7" fill="none" stroke-linecap="round"/>
+        </svg>
+        <span class="name">Шаурма</span>
+        <span class="price">от 120 ₽</span>
+      </div>
+
+      <div class="menu-item">
+        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 44 Q60 18 100 44 Q60 56 20 44 Z" fill="#e8b563"/>
+          <rect x="18" y="52" width="84" height="10" rx="5" fill="#c0392b"/>
+          <rect x="18" y="64" width="84" height="8" rx="4" fill="#27ae60"/>
+          <rect x="20" y="74" width="80" height="12" rx="6" fill="#f4d19b"/>
+          <rect x="18" y="88" width="84" height="10" rx="5" fill="#e8b563"/>
+        </svg>
+        <span class="name">Бургеры</span>
+        <span class="price">от 120 ₽</span>
+      </div>
+
+      <div class="menu-item">
+        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <rect x="14" y="44" width="92" height="22" rx="11" fill="#e8b563"/>
+          <rect x="22" y="48" width="76" height="8" rx="4" fill="#c0392b"/>
+          <path d="M22 66 Q60 84 98 66" stroke="#f4d19b" stroke-width="8" fill="none" stroke-linecap="round"/>
+          <path d="M30 72 Q60 92 90 72" stroke="#f77f00" stroke-width="5" fill="none" stroke-linecap="round"/>
+        </svg>
+        <span class="name">Хот-доги</span>
+        <span class="price">от 120 ₽</span>
+      </div>
+
+      <div class="menu-item">
+        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <path d="M60 20 Q100 40 96 84 Q60 104 24 84 Q20 40 60 20 Z" fill="#e8b563"/>
+          <path d="M60 34 Q88 48 84 80 Q60 94 36 80 Q32 48 60 34 Z" fill="#f4d19b"/>
+          <path d="M42 56 Q60 50 78 56" stroke="#c0392b" stroke-width="5" fill="none" stroke-linecap="round"/>
+        </svg>
+        <span class="name">Чебуреки / беляши</span>
+        <span class="price">от 120 ₽</span>
+      </div>
+
+      <div class="menu-item">
+        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <path d="M60 18 L98 80 Q60 96 22 80 Z" fill="#e8b563"/>
+          <path d="M34 66 Q60 58 86 66" stroke="#c0392b" stroke-width="7" fill="none" stroke-linecap="round"/>
+          <circle cx="46" cy="56" r="5" fill="#c0392b"/>
+          <circle cx="66" cy="52" r="5" fill="#c0392b"/>
+          <circle cx="76" cy="64" r="5" fill="#c0392b"/>
+          <circle cx="56" cy="68" r="5" fill="#27ae60"/>
+        </svg>
+        <span class="name">Пицца</span>
+        <span class="price">от 200 ₽</span>
+      </div>
+
+      <div class="menu-item">
+        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <rect x="28" y="26" width="16" height="70" rx="6" fill="#f4d19b"/>
+          <rect x="52" y="16" width="16" height="88" rx="6" fill="#e8b563"/>
+          <rect x="76" y="30" width="16" height="66" rx="6" fill="#f4d19b"/>
+          <path d="M34 34 v50 M58 26 v64 M82 38 v46" stroke="#f77f00" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <span class="name">Картофель фри</span>
+        <span class="price">от 120 ₽</span>
+      </div>
+
+      <div class="menu-item">
+        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="60" cy="66" rx="42" ry="30" fill="#e8b563"/>
+          <ellipse cx="60" cy="60" rx="34" ry="22" fill="#f4d19b"/>
+          <path d="M42 52 Q60 44 78 52" stroke="#c0392b" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <circle cx="60" cy="50" r="4" fill="#27ae60"/>
+        </svg>
+        <span class="name">Куры-гриль</span>
+        <span class="price">от 200 ₽</span>
+      </div>
+
+      <div class="menu-item">
+        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="60" cy="60" r="40" fill="#f4d19b"/>
+          <path d="M60 20 Q92 44 84 80 Q60 98 36 80 Q28 44 60 20 Z" fill="#e8b563"/>
+          <path d="M60 34 Q80 50 74 78 Q60 88 46 78 Q40 50 60 34 Z" fill="#fff3cd"/>
+          <circle cx="60" cy="58" r="6" fill="#c0392b"/>
+        </svg>
+        <span class="name">Блины</span>
+        <span class="price">от 120 ₽</span>
+      </div>
+
     </div>
-    <p class="note">* Цены ориентировочные. Актуальное меню и стоимость уточняйте по телефону — средний чек 300 ₽.</p>
+    <p class="note">* Цены ориентировочные. Актуальное меню и стоимость уточняйте по телефону — средний чек 120–200 ₽.</p>
   </section>
 
   <section id="contacts">
     <h2>Контакты</h2>
     <div class="contacts-flex">
       <div class="contacts-col">
-        <a href="tel:+73012357546" class="phone">+7 (914) 636-44-14</a>
-        <a href="tel:+73012610535" class="phone">+7 (902) 161-05-35</a>
-        <p>Звоните в любое время — мы на связи 24/7.</p>
+        <span class="label">Основной номер (звонки и мессенджеры):</span>
+        <a href="tel:+79146364414" class="phone">+7 (914) 636-44-14</a>
+        <span class="label">Второй номер точки:</span>
+        <a href="tel:+79021610535" class="phone">+7 (902) 161-05-35</a>
+        <p style="margin-top:10px;">Звоните в любое время — мы на связи 24/7.</p>
         <a class="route-btn"
            href="https://yandex.ru/maps/?rtext=~51.841720,107.590476&rtt=auto"
            target="_blank" rel="noopener">🗺 Построить маршрут</a>
@@ -222,4 +316,4 @@
 </footer>
 
 </body>
-</html>
+ </html>
